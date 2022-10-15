@@ -1,39 +1,44 @@
 import React, { Component } from 'react';
-
+import { getAppareils } from '../appareils/fakeMovieService';
 class Mainto extends Component {
-    state = {  } 
+    state = {  
+        appareil: getAppareils()
+    } 
+
+    returnTitle(appareil){
+        if (appareil.genre.type === "systhematique") return <td>{appareil.title}</td>
+    }
+    returnGenreName(appareil){
+        if (appareil.genre.type === "systhematique") return <td>{appareil.genre.name}</td>
+    }
+    returnDateDernier(appareil){
+        if (appareil.genre.type === "systhematique") return <td>{appareil.date_de_derniere}</td>
+    }
+    returnDateProchaine(appareil){
+        if (appareil.genre.type === "systhematique") return <td>{appareil.date_de_prochaine}</td>
+    }
     render() { 
         return (
         <React.Fragment>
             <table className="table">
-                <caption>List of users</caption>
+                <caption>appareil de maintenace preventive</caption>
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Appareil</th>
+                        <th scope="col">Nature</th>
+                        <th scope="col">Date dernier miantenance</th>
+                        <th scope="col">Date prochaine miantenance</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                    {this.state.appareil.map(appareil => (
+                        <tr>
+                            {this.returnTitle(appareil)}
+                            {this.returnGenreName(appareil)}
+                            {this.returnDateDernier(appareil)} 
+                            {this.returnDateProchaine(appareil)} 
+                        </tr>
+                    ) )}
                 </tbody>
             </table>
         </React.Fragment>
