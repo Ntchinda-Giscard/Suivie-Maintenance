@@ -4,19 +4,25 @@ class Navbar extends Component {
     state = {  } 
     render() { 
         return (
-            <nav className="navbar navbar-expand-lg navbar-light" style={{backgroundColor: "#e3f2fd"}}>
-                <a className="navbar-brand p-3" href="#"> <strong><i>Mainto</i>  </strong></a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div className="navbar-nav">
-                        <a className="nav-item nav-link active" href="#">Accueil <span className="sr-only">(current)</span></a>
-                        <a className="nav-item nav-link" href="#">Formulaire</a>
-                        <a className="nav-item nav-link" href="#">BD</a>
-                    </div>
-                </div>
-            </nav>
+            <nav className = "navbar navbar-expand-lg navbar-light bg-light">
+  <a className = "navbar-brand" href="#">Navbar</a>
+  <button className = "navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span className = "navbar-toggler-icon"></span>
+  </button>
+  <div className = "collapse navbar-collapse" id="navbarNav">
+    <ul className = "navbar-nav">
+      <li className = "nav-item active">
+        <a className = "nav-link" href="#"> Systhmatique <span className = "sr-only">(current)</span></a>
+      </li>
+      <li className = "nav-item">
+        <a className = "nav-link" href="#"> Conditionelle </a>
+      </li>
+      <li className = "nav-item">
+        <a className = "nav-link" href="#"> Formulaire </a>
+      </li>
+    </ul>
+  </div>
+</nav>
         );
     }
 }
