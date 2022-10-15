@@ -7,10 +7,12 @@ class App extends Component {
   state = {  } 
   render() { 
     return (
-    <div>
-      <Navbar />
-      <Mainto />
-    </div>
+      <React.Fragment>
+        <Navbar />
+        <main className="container">
+          <Mainto />
+       </main>
+      </React.Fragment>    
     );
   }
 }
