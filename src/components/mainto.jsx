@@ -17,6 +17,11 @@ class Mainto extends Component {
     returnDateProchaine(appareil){
         if (appareil.genre.type === "systhematique") return <td>{appareil.date_de_prochaine}</td>
     }
+    returnEtat(appareil){
+        if(appareil.genre.type === "systhematique"){
+
+        }
+    }
     render() { 
         return (
         <React.Fragment>
@@ -28,6 +33,7 @@ class Mainto extends Component {
                         <th scope="col">Nature</th>
                         <th scope="col">Date dernier miantenance</th>
                         <th scope="col">Date prochaine miantenance</th>
+                        <th scopr='col'>Etat</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +42,8 @@ class Mainto extends Component {
                             {this.returnTitle(appareil)}
                             {this.returnGenreName(appareil)}
                             {this.returnDateDernier(appareil)} 
-                            {this.returnDateProchaine(appareil)} 
+                            {this.returnDateProchaine(appareil)}
+                            <td></td>
                         </tr>
                     ) )}
                 </tbody>
