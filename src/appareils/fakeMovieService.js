@@ -20,6 +20,7 @@ var movies = [
     date_de_prochaine: myformatDate + period,
     title: "moteur du dentifizeur",
     genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Electrique", type:"conditionelle" },
+    etat: true,
     numberInStock: 6,
     dailyRentalRate: 2.5,
     publishDate: "2018-01-03T19:04:28.809Z"
@@ -30,6 +31,7 @@ var movies = [
     date_de_prochaine: myformatDate + period,
     title: "moteur du moule",
     genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Electrique", type: "systhematique" },
+    etat: true,
     numberInStock: 5,
     dailyRentalRate: 2.5
   },
@@ -39,6 +41,7 @@ var movies = [
     date_de_prochaine: myformatDate + period,
     title: "Verin",
     genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Hydraulique" , type: "systhematique"},
+    etat: true,
     numberInStock: 8,
     dailyRentalRate: 3.5
   },
@@ -48,6 +51,7 @@ var movies = [
     date_de_prochaine: myformatDate + period,
     title: "Distributeur",
     genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Hydraulique" , type: "systhematique"},
+    etat: true,
     numberInStock: 7,
     dailyRentalRate: 3.5
   },
@@ -57,6 +61,7 @@ var movies = [
     date_de_prochaine: myformatDate + period,
     title: "Tapis roulant",
     genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Mecanique", type:"conditionelle"  },
+    etat: true,
     numberInStock: 7,
     dailyRentalRate: 3.5
   },
@@ -66,6 +71,7 @@ var movies = [
     date_de_prochaine: myformatDate + period,
     title: "Roulement",
     genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Mecanique", type:"conditionelle"  },
+    etat: true,
     numberInStock: 7,
     dailyRentalRate: 3.5
   },
@@ -75,6 +81,7 @@ var movies = [
     date_de_prochaine: myformatDate + period,
     title: "Transformateur",
     genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "electrique" , type: "systhematique"},
+    etat: true,
     numberInStock: 7,
     dailyRentalRate: 4.5
   },
@@ -84,6 +91,7 @@ var movies = [
     date_de_prochaine: myformatDate + period,
     title: "Filtre",
     genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Hydraulique", type: "conditionelle" },
+    etat: true,
     numberInStock: 4,
     dailyRentalRate: 3.5
   },
@@ -93,6 +101,7 @@ var movies = [
     date_de_prochaine: myformatDate + period,
     title: "Engrnage",
     genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Mecanique", type: "systhematique" },
+    etat: true,
     numberInStock: 7,
     dailyRentalRate: 3.5
   }
