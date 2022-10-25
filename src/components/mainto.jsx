@@ -19,7 +19,12 @@ class Mainto extends Component {
     }
     returnEtat(appareil){
         if(appareil.genre.type === "systhematique"){
-
+            if (appareil.etat === true){
+                return <td>bonne</td>
+            }
+            else{
+                return <td>retard</td> 
+            }
         }
     }
     render() { 
@@ -43,7 +48,7 @@ class Mainto extends Component {
                             {this.returnGenreName(appareil)}
                             {this.returnDateDernier(appareil)} 
                             {this.returnDateProchaine(appareil)}
-                            <td></td>
+                            {this.returnEtat(appareil)}
                         </tr>
                     ) )}
                 </tbody>
