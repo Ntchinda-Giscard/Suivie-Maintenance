@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ListType from './listType';
 import { getAppareils } from '../appareils/fakeMovieService';
 class Mainto extends Component {
     state = {  
@@ -20,7 +21,7 @@ class Mainto extends Component {
     returnEtat(appareil){
         if(appareil.genre.type === "systhematique"){
             if (appareil.etat === true){
-                return <td>bonne</td>
+                return <td><span className='btn btn-warning p-0'>warn</span></td>
             }
             else{
                 return <td>retard</td> 
@@ -29,8 +30,18 @@ class Mainto extends Component {
     }
     render() { 
         return (
-        <React.Fragment>
-            <table className="table">
+        <div>
+            <div className='row'>
+                <div className='col-2'>
+                    <ul className='list-group'>
+                        <li className='list-group-item'> Conditionel</li>
+                        <li className='list-group-item'> Sythematique</li>
+                    </ul>
+                </div>
+
+                <div className='col'>
+                <React.Fragment>
+                <table className="table">
                 <caption>appareil de maintenace preventive</caption>
                 <thead>
                     <tr>
@@ -54,7 +65,10 @@ class Mainto extends Component {
                 </tbody>
             </table>
         </React.Fragment>
-        
+                </div>
+            </div>
+        </div>
+
         );
     }
 }
