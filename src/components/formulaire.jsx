@@ -26,9 +26,9 @@ class Forms extends Component {
                     <div className='row'>
                         <div className='col'>
                             <div className='form-group mt-3'>
-                                <label htmlFor='exampleInputForm' className='form-padding h5'>Addres</label>
-                                <input type="email" className='form-control w-100' style={{backgroundColor: '#eee'}} id='exampleInputForm' aria-describedby='emailHelp' placeholder='Enter email' />
-                                <small id='emailHelp' className='form-text text-muted'> I will share your address</small>
+                                <label htmlFor='exampleInputForm' className='form-padding h5'>Identification</label>
+                                <input type="email" className='form-control w-100' style={{backgroundColor: '#eee'}} id='exampleInputForm' aria-describedby='emailHelp' placeholder='Enter id' />
+                                <small id='emailHelp' className='form-text text-muted'> ID</small>
                            </div>
                            <div className='form-group mt-3'>
                             <label htmlFor='' className='h5'>Nom de Machine</label>
@@ -70,8 +70,8 @@ class Forms extends Component {
                                 </div>
                                 <div className='col'>
                                     <div className='form-group mt-1'>
-                                        <label htmlFor='' className='h5' > Debit </label>
-                                        <input type='text' className='form-control w-100' id='' placeholder='debit' />
+                                        <label htmlFor='' className='h5' > Vitesse </label>
+                                        <input type='text' className='form-control w-100' id='' placeholder='Vitesse' />
                                     </div>
 
                                 </div>
