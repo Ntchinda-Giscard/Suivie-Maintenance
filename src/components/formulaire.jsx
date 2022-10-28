@@ -26,36 +26,36 @@ class Forms extends Component {
                     <div className='row'>
                         <div className='col'>
                             <div className='form-group mt-3'>
-                                <label htmlFor='exampleInputForm' className='form-padding h5'>Identification</label>
-                                <input type="email" className='form-control w-100' style={{backgroundColor: '#eee'}} id='exampleInputForm' aria-describedby='emailHelp' placeholder='Enter id' />
+                                <label htmlFor='identification' className='form-padding h5'>Identification</label>
+                                <input type="email" className='form-control w-100' style={{backgroundColor: '#eee'}} id='identification' aria-describedby='emailHelp' placeholder='Enter id' />
                                 <small id='emailHelp' className='form-text text-muted'> ID</small>
                            </div>
                            <div className='form-group mt-3'>
-                            <label htmlFor='' className='h5'>Nom de Machine</label>
-                            <select type='date' className='form-control w-100' style={{backgroundColor: '#eee'}} placeholder='Choisir une machine'> 
+                            <label htmlFor='machine' className='h5'>Nom de Machine</label>
+                            <select className='form-control w-100' style={{backgroundColor: '#eee'}} id='machine' placeholder='Choisir une machine'> 
                                 {this.state.appareil.map(appareil=> (
-                                    <option> {appareil.title} </option>
+                                    <option key={appareil._id} > {appareil.title} </option>
                                 ))}
                             </select>
                            </div>
                           <div className='form-group mt-3'>
-                            <label htmlFor='' className='h5'>Date de miantenance</label>
-                            <input type="date" className='form-control w-100' style={{backgroundColor: '#eee'}} id='' aria-describedby='emailHelp'  />
+                            <label htmlFor='Date' className='h5'>Date de miantenance</label>
+                            <input type="date" className='form-control w-100' style={{backgroundColor: '#eee'}} id='Date' aria-describedby='emailHelp'  />
                           </div>
                         </div>
                         <div className='col'>
                             <div className='row'> 
                                 <div className='col'>
                                     <div className='form-group mt-1'>
-                                        <label htmlFor='' className='h5' > Courant </label>
-                                        <input type='text' className='form-control w-100' id='' placeholder='courant' />
+                                        <label htmlFor='courant' className='h5' > Courant </label>
+                                        <input type='text' className='form-control w-100' id='courant' placeholder='courant' />
                                     </div>
 
                                 </div>
                                 <div className='col'>
                                     <div className='form-group mt-1'>
-                                        <label htmlFor='' className='h5' > Tension </label>
-                                        <input type='text' className='form-control w-100' id='' placeholder='Tension' />
+                                        <label htmlFor='tension' className='h5' > Tension </label>
+                                        <input type='text' className='form-control w-100' id='tension' placeholder='Tension' />
                                     </div>
 
                                 </div>
@@ -63,15 +63,15 @@ class Forms extends Component {
                             <div className='row'> 
                                 <div className='col'>
                                     <div className='form-group mt-1'>
-                                        <label htmlFor='' className='h5' > Pression </label>
-                                        <input type='text' className='form-control w-100' id='' placeholder='pression' />
+                                        <label htmlFor='pression' className='h5' > Pression </label>
+                                        <input type='text' className='form-control w-100' id='pression' placeholder='pression' />
                                     </div>
 
                                 </div>
                                 <div className='col'>
                                     <div className='form-group mt-1'>
-                                        <label htmlFor='' className='h5' > Vitesse </label>
-                                        <input type='text' className='form-control w-100' id='' placeholder='Vitesse' />
+                                        <label htmlFor='vitesse' className='h5' > Vitesse </label>
+                                        <input type='text' className='form-control w-100' id='vitesse' placeholder='Vitesse' />
                                     </div>
 
                                 </div>
@@ -86,12 +86,5 @@ class Forms extends Component {
         );
     }
 }
-
-{/* <label htmlFor=''>Nom de Machine</label>
-                        <select type='date' className='form-control'> 
-                            {this.state.appareil.map(appareil=> (
-                                <option> {appareil.title} </option>
-                            ))}
-                        </select> */}
  
 export default Forms;
