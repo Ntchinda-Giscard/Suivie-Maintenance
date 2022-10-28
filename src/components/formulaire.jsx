@@ -35,7 +35,7 @@ class Forms extends Component {
                         <div className='col'>
                           <div className='form-group mt-3'>
                             <label htmlFor='identification' className='h5'>identification</label>
-                            <input name='identification' onChange={this.handleChange} value={this.state.data.identification} type="texte" className='form-control w-100' style={{backgroundColor: '#eee'}} id='identification'  />
+                            <input autoFocus name='identification' onChange={this.handleChange} value={this.state.data.identification} type="texte" className='form-control w-100 ' style={{backgroundColor: '#eee'}} id='identification'  />
                             { this.validate() === true? <div className='alert alert-danger p-1'>identification requise</div> : null}
                           </div>
                            <div className='form-group mt-3'>
