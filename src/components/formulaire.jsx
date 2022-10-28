@@ -6,7 +6,7 @@ class Forms extends Component {
     courant = React.createRef();
     state = {  
         appareil: getAppareils(),
-        data: {courant: '', pression: '', tension:'', vitesse: ''}
+        data: {courant: '', pression: '', tension:'', vitesse: '', date: '', name: ''}
     }
 
     handleSubmit = (event)=> {
@@ -26,20 +26,20 @@ class Forms extends Component {
                         <div className='col'>
                             <div className='form-group mt-3'>
                                 <label htmlFor='identification' className='form-padding h5'>Identification</label>
-                                <input type="email" className='form-control w-100' style={{backgroundColor: '#eee'}} id='identification' aria-describedby='emailHelp' placeholder='Enter id' />
-                                <small id='emailHelp' className='form-text text-muted'> ID</small>
+                                <input type="text" className='form-control w-100' style={{backgroundColor: '#eee'}} id='identification' aria-describedby='emailHelp' placeholder='Enter id' />
+                                <small name ="identification" onChange={this.handleChange} id='emailHelp' className='form-text text-muted'> ID</small>
                            </div>
                            <div className='form-group mt-3'>
                             <label htmlFor='machine' className='h5'>Nom de Machine</label>
-                            <select className='form-control w-100' style={{backgroundColor: '#eee'}} id='machine' placeholder='Choisir une machine'> 
+                            <select name='name' onChange={this.handleChange} value={this.state.data.name} className='form-control w-100' style={{backgroundColor: '#eee'}} id='machine' placeholder='Choisir une machine'> 
                                 {this.state.appareil.map(appareil=> (
                                     <option key={appareil._id} > {appareil.title} </option>
                                 ))}
                             </select>
                            </div>
                           <div className='form-group mt-3'>
-                            <label htmlFor='Date' className='h5'>Date de miantenance</label>
-                            <input type="date" className='form-control w-100' style={{backgroundColor: '#eee'}} id='Date' aria-describedby='emailHelp'  />
+                            <label htmlFor='date' className='h5'>Date de miantenance</label>
+                            <input name='date' onChange={this.handleChange} value={this.state.data.date} type="date" className='form-control w-100' style={{backgroundColor: '#eee'}} id='Date' aria-describedby='emailHelp'  />
                           </div>
                         </div>
                         <div className='col'>
