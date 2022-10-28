@@ -6,11 +6,20 @@ class Forms extends Component {
     courant = React.createRef();
     state = {  
         appareil: getAppareils(),
-        data: {courant: '', pression: '', tension:'', vitesse: '', date: '', name: ''}
+        data: {courant: '', pression: '', tension:'', vitesse: '', date: '', name: '', identification:''}
     }
-
+    validate= ()=>{
+        const error = {}
+        const {data} = this.state;
+        if (data.identification.trim() === "") return "identifiant requise"
+        else return {}
+    }
     handleSubmit = (event)=> {
         event.preventDefault();
+        const error = this.validate()
+        console.log(error)
+        console.log(this.state.data.date)
+        this.setState({ error })
     }
     handleChange = ({currentTarget: input})=>{
         const data = {...this.state.data};
@@ -24,14 +33,13 @@ class Forms extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className='row'>
                         <div className='col'>
-                            <div className='form-group mt-3'>
-                                <label htmlFor='identification' className='form-padding h5'>Identification</label>
-                                <input type="text" className='form-control w-100' style={{backgroundColor: '#eee'}} id='identification' aria-describedby='emailHelp' placeholder='Enter id' />
-                                <small name ="identification" onChange={this.handleChange} id='emailHelp' className='form-text text-muted'> ID</small>
-                           </div>
+                          <div className='form-group mt-3'>
+                            <label htmlFor='identification' className='h5'>identification</label>
+                            <input name='identification' onChange={this.handleChange} value={this.state.data.identification} type="texte" className='form-control w-100' style={{backgroundColor: '#eee'}} id='identification'  />
+                          </div>
                            <div className='form-group mt-3'>
                             <label htmlFor='machine' className='h5'>Nom de Machine</label>
-                            <select name='name' onChange={this.handleChange} value={this.state.data.name} className='form-control w-100' style={{backgroundColor: '#eee'}} id='machine' placeholder='Choisir une machine'> 
+                            <select name='name' onChange={this.handleChange} value={this.state.data.name}  className='form-control w-100' style={{backgroundColor: '#eee'}} id='machine' placeholder='Choisir une machine'> 
                                 {this.state.appareil.map(appareil=> (
                                     <option key={appareil._id} > {appareil.title} </option>
                                 ))}
