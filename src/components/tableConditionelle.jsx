@@ -41,7 +41,7 @@ class TableConditionelle extends Component {
                     </thead>
                     <tbody>
                         {this.state.appareil.map(appareil => (
-                            <tr>
+                            <tr key={appareil._id}>
                                 {this.returnTitle(appareil)}
                                 {this.returnGenreName(appareil)}
                                 {this.returnCourant(appareil)} 
