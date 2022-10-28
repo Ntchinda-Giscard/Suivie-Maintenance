@@ -11,8 +11,8 @@ class Forms extends Component {
     validate= ()=>{
         const error = {}
         const {data} = this.state;
-        if (data.identification.trim() === "") return "identifiant requise"
-        else return {}
+        if (data.identification.trim() === "") return true
+        else return false
     }
     handleSubmit = (event)=> {
         event.preventDefault();
@@ -36,6 +36,7 @@ class Forms extends Component {
                           <div className='form-group mt-3'>
                             <label htmlFor='identification' className='h5'>identification</label>
                             <input name='identification' onChange={this.handleChange} value={this.state.data.identification} type="texte" className='form-control w-100' style={{backgroundColor: '#eee'}} id='identification'  />
+                            { this.validate() === true? <div className='alert alert-danger p-1'>identification requise</div> : null}
                           </div>
                            <div className='form-group mt-3'>
                             <label htmlFor='machine' className='h5'>Nom de Machine</label>
