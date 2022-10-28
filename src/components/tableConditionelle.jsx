@@ -24,6 +24,16 @@ class TableConditionelle extends Component {
     returnVitesse(appareil){
         if (appareil.genre.type === "conditionelle") return <td>{appareil.vitesse}</td>
     }
+    returnEtat(appareil){
+        if(appareil.genre.type === "conditionelle"){
+            if (appareil.etat === true){
+                return <td><span className='btn btn-warning p-0'>warn</span></td>
+            }
+            else{
+                return <td>retard</td>
+            }
+        }
+    }
     render() { 
         return (
             <div>
@@ -37,6 +47,7 @@ class TableConditionelle extends Component {
                             <th scope="col">Tension(V) </th>
                             <th scopr='col'>Pression(Ba) </th>
                             <th scopr='col'>Vitesse(Tr/min) </th>
+                            <th scopr='col'>Etat</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,6 +59,7 @@ class TableConditionelle extends Component {
                                 {this.returnTension(appareil)}
                                 {this.returnPression(appareil)}
                                 {this.returnVitesse(appareil)}
+                                {this.returnEtat(appareil)}
                             </tr>
                         ) )}
                     </tbody>
