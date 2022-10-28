@@ -1,47 +1,51 @@
 import React, { Component } from 'react';
-import ListType from './listType';
+import TableSynthetique from './tableSysthematique';
+import TableConditionelle from './tableConditionelle'
 import { getAppareils } from '../appareils/fakeMovieService';
 class Mainto extends Component {
     state = {  
-        appareil: getAppareils()
+        appareil: getAppareils(),
+        type: true
     } 
 
-    returnTitle(appareil){
-        if (appareil.genre.type === "systhematique") return <td>{appareil.title}</td>
+    renderType = (type) =>{
+        if(type == true) return <TableSynthetique />;
+        if(type == false) return <TableConditionelle />;
     }
-    returnGenreName(appareil){
-        if (appareil.genre.type === "systhematique") return <td>{appareil.genre.name}</td>
+
+    setTOTrue = () => {
+        this.setState({ type: true })
+        console.log(this.state.type)
     }
-    returnDateDernier(appareil){
-        if (appareil.genre.type === "systhematique") return <td>{appareil.date_de_derniere}</td>
+    setTOFalse = () => {
+        this.setState({ type: false })
+        console.log(this.state.type)
     }
-    returnDateProchaine(appareil){
-        if (appareil.genre.type === "systhematique") return <td>{appareil.date_de_prochaine}</td>
-    }
-    returnEtat(appareil){
-        if(appareil.genre.type === "systhematique"){
-            if (appareil.etat === true){
-                return <td><span className='btn btn-warning p-0'>warn</span></td>
-            }
-            else{
-                return <td>retard</td> 
-            }
-        }
-    }
+    
     render() { 
         return (
         <div>
             <div className='row'>
                 <div className='col-2'>
                     <ul className='list-group'>
-                        <li className='list-group-item'> Conditionel</li>
-                        <li className='list-group-item'> Sythematique</li>
+                        <li className='list-group-item' onClick={this.setTOTrue}> Conditionel</li>
+                        <li className='list-group-item' onClick={this.setTOFalse}> Sythematique</li>
                     </ul>
                 </div>
 
                 <div className='col'>
-                <React.Fragment>
-                <table className="table">
+                    {this.renderType(this.state.type)}          
+                </div>
+            </div>
+        </div>
+
+        );
+    }
+}
+ 
+export default Mainto;
+
+{/* <<table className="table">
                 <caption>appareil de maintenace preventive</caption>
                 <thead>
                     <tr>
@@ -63,14 +67,4 @@ class Mainto extends Component {
                         </tr>
                     ) )}
                 </tbody>
-            </table>
-        </React.Fragment>
-                </div>
-            </div>
-        </div>
-
-        );
-    }
-}
- 
-export default Mainto;
+            </table>> */}
