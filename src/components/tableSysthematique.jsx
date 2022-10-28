@@ -46,7 +46,7 @@ class TableSynthematique extends Component {
                     </thead>
                     <tbody>
                         {this.state.appareil.map(appareil => (
-                            <tr>
+                            <tr key={appareil._id}>
                                 {this.returnTitle(appareil)}
                                 {this.returnGenreName(appareil)}
                                 {this.returnDateDernier(appareil)} 
