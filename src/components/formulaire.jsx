@@ -3,26 +3,25 @@ import React, { Component } from 'react';
 import { getAppareils } from '../appareils/fakeMovieService';
 
 class Forms extends Component {
+    courant = React.createRef();
     state = {  
-        appareil: getAppareils()
+        appareil: getAppareils(),
+        data: {courant: '', pression: '', tension:'', vitesse: ''}
     }
-    returnForE(appareil){
-        if(appareil.genre.name === "electrique") return <div className='form-row'>
-            <div className='col-2'>
-                <label htmlFor='exampleInputForm' className='form-padding h5'>Courant(A)</label>
-                <input type='text'className='form-control' placeholder='courant' />
-            </div>
-            <div className='col-2'>
-                <label htmlFor='exampleInputForm' className='form-padding h5'>Tension(V)</label>
-                <input type='text'className='form-control' placeholder='tension' />
-            </div>
-            
-        </div>
+
+    handleSubmit = (event)=> {
+        event.preventDefault();
     }
+    handleChange = ({currentTarget: input})=>{
+        const data = {...this.state.data};
+        data[input.name] = input.value;
+        this.setState({data});
+    }
+
     render() { 
         return (
             <main className='container'>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div className='row'>
                         <div className='col'>
                             <div className='form-group mt-3'>
@@ -48,14 +47,14 @@ class Forms extends Component {
                                 <div className='col'>
                                     <div className='form-group mt-1'>
                                         <label htmlFor='courant' className='h5' > Courant </label>
-                                        <input type='text' className='form-control w-100' id='courant' placeholder='courant' />
+                                        <input name='courant' onChange={this.handleChange} type='text' value={this.state.data.courant} className='form-control w-100' id='courant' placeholder='courant' />
                                     </div>
 
                                 </div>
                                 <div className='col'>
                                     <div className='form-group mt-1'>
                                         <label htmlFor='tension' className='h5' > Tension </label>
-                                        <input type='text' className='form-control w-100' id='tension' placeholder='Tension' />
+                                        <input name='tension' type='text' onChange={this.handleChange} value={this.state.data.tension} className='form-control w-100' id='tension' placeholder='Tension' />
                                     </div>
 
                                 </div>
@@ -64,14 +63,14 @@ class Forms extends Component {
                                 <div className='col'>
                                     <div className='form-group mt-1'>
                                         <label htmlFor='pression' className='h5' > Pression </label>
-                                        <input type='text' className='form-control w-100' id='pression' placeholder='pression' />
+                                        <input name='pression' onChange={this.handleChange} value={this.state.data.pression} type='text' className='form-control w-100' id='pression' placeholder='pression' />
                                     </div>
 
                                 </div>
                                 <div className='col'>
                                     <div className='form-group mt-1'>
                                         <label htmlFor='vitesse' className='h5' > Vitesse </label>
-                                        <input type='text' className='form-control w-100' id='vitesse' placeholder='Vitesse' />
+                                        <input name='vitesse' onChange={this.handleChange} value={this.state.data.vitesse} type='text' className='form-control w-100' id='vitesse' placeholder='Vitesse' />
                                     </div>
 
                                 </div>
@@ -88,3 +87,17 @@ class Forms extends Component {
 }
  
 export default Forms;
+
+// returnForE(appareil){
+//     if(appareil.genre.name === "electrique") return <div className='form-row'>
+//         <div className='col-2'>
+//             <label htmlFor='exampleInputForm' className='form-padding h5'>Courant(A)</label>
+//             <input type='text'className='form-control' placeholder='courant' />
+//         </div>
+//         <div className='col-2'>
+//             <label htmlFor='exampleInputForm' className='form-padding h5'>Tension(V)</label>
+//             <input type='text'className='form-control' placeholder='tension' />
+//         </div>
+        
+//     </div>
+// }
