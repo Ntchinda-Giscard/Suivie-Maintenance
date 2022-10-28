@@ -76,10 +76,6 @@ class Forms extends Component {
 
                                 </div>
                             </div>
-                            <div className='form-group mt-1'>
-                                    <label htmlFor='' className='h5' > Debit </label>
-                                    <input type='text' className='form-control w-100' id='' placeholder='debit' />
-                            </div>
                         </div>
                     
                     </div>
