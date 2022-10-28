@@ -28,8 +28,8 @@ class Mainto extends Component {
             <div className='row'>
                 <div className='col-2'>
                     <ul className='list-group'>
-                        <li className='list-group-item' onClick={this.setTOTrue} style={{cursor: 'pointer'}} > Conditionel</li>
-                        <li className='list-group-item' onClick={this.setTOFalse} style={{cursor: 'pointer'}} > Sythematique</li>
+                        <li className={this.state.type == true ? 'list-group-item active' :'list-group-item' } onClick={this.setTOTrue} style={{cursor: 'pointer'}} > Conditionel</li>
+                        <li className= {this.state.type == false ? 'list-group-item active' :'list-group-item' } onClick={this.setTOFalse} style={{cursor: 'pointer'}} > Sythematique</li>
                     </ul>
                 </div>
 
