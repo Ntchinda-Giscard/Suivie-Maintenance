@@ -9,8 +9,8 @@ class Mainto extends Component {
     } 
 
     renderType = (type) =>{
-        if(type == true) return <TableSynthetique />;
-        if(type == false) return <TableConditionelle />;
+        if(type === true) return <TableSynthetique />;
+        if(type === false) return <TableConditionelle />;
     }
 
     setTOTrue = () => {
