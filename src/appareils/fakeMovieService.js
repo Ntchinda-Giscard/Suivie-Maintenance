@@ -1,15 +1,15 @@
 import * as genresAPI from "./fakeGenreService";
 
-function formatDate(dateObject){
-  const parts = {
-    date: dateObject.getDate(),
-    month: dateObject.getMonth() + 1,
-    year: dateObject.getFullYear()
-  };
+// function formatDate(dateObject){
+//   const parts = {
+//     date: dateObject.getDate(),
+//     month: dateObject.getMonth() + 1,
+//     year: dateObject.getFullYear()
+//   };
 
-  return `${parts.date}/${parts.month}/${parts.year}`;
+//   return `${parts.date}/${parts.month}/${parts.year}`;
 
-}
+// }
 var myDate = new Date()
 // var myformatDate = formatDate(myDate);
 var date = myDate.getDate();
@@ -18,8 +18,8 @@ var year = myDate.getFullYear();
 var movies = [
   {
     _id: "5b20",
-    date_de_derniere: `${date}/${month}/${year}`,
-    date_de_prochaine: `${date}/${month + 2}/${year}`,
+    date_de_derniere: `${year}-${month}-${date}`,
+    date_de_prochaine: `${year}-${month + 2}-${date}`,
     title: "moteur du dentifizeur",
     vitesse: 20,
     courant: 30,
@@ -32,8 +32,8 @@ var movies = [
   },
   {
     _id: "5b21",
-    date_de_derniere: `${date}/${month}/${year}`,
-    date_de_prochaine: `${date}/${month + 2}/${year}`,
+    date_de_derniere: `${year}-${month}-${date}`,
+    date_de_prochaine: `${year}-${month + 2}-${date}`,
     title: "moteur du moule",
     genre: { _id: "5b21", name: "Electrique", type: "systhematique" },
     etat: true,
@@ -42,8 +42,8 @@ var movies = [
   },
   {
     _id: "5b22",
-    date_de_derniere: `${date}/${month}/${year}`,
-    date_de_prochaine: `${date}/${month + 2}/${year}`,
+    date_de_derniere: `${year}-${month}-${date}`,
+    date_de_prochaine: `${year}-${month + 2}-${date}`,
     title: "Verin",
     genre: { _id: "5b22", name: "Hydraulique" , type: "systhematique"},
     etat: true,
@@ -52,8 +52,8 @@ var movies = [
   },
   {
     _id: "5b23",
-    date_de_derniere: `${date}/${month}/${year}`,
-    date_de_prochaine: `${date}/${month + 2}/${year}`,
+    date_de_derniere: `${year}-${month}-${date}`,
+    date_de_prochaine: `${year}-${month + 2}-${date}`,
     title: "Distributeur",
     genre: { _id: "5b23", name: "Hydraulique" , type: "systhematique"},
     etat: true,
@@ -62,8 +62,8 @@ var movies = [
   },
   {
     _id: "5b24",
-    date_de_derniere: `${date}/${month}/${year}`,
-    date_de_prochaine: `${date}/${month + 2}/${year}`,
+    ddate_de_derniere: `${year}-${month}-${date}`,
+    date_de_prochaine: `${year}-${month + 2}-${date}`,
     title: "Tapis roulant",
     vitesse: 20,
     courant: 30,
@@ -75,8 +75,8 @@ var movies = [
   },
   {
     _id: "5b25",
-    date_de_derniere: `${date}/${month}/${year}`,
-    date_de_prochaine: `${date}/${month + 2}/${year}`,
+    date_de_derniere: `${year}-${month}-${date}`,
+    date_de_prochaine: `${year}-${month + 2}-${date}`,
     title: "Roulement",
     presion: 20,
     debit: 20,
@@ -87,8 +87,8 @@ var movies = [
   },
   {
     _id: "5b26",
-    date_de_derniere: `${date}/${month}/${year}`,
-    date_de_prochaine: `${date}/${month + 2}/${year}`,
+    date_de_derniere: `${year}-${month}-${date}`,
+    date_de_prochaine: `${year}-${month + 2}-${date}`,
     title: "Transformateur",
     genre: { _id: "5b26", name: "electrique" , type: "systhematique"},
     etat: true,
@@ -97,8 +97,8 @@ var movies = [
   },
   {
     _id: "5b27",
-    date_de_derniere: `${date}/${month}/${year}`,
-    date_de_prochaine: `${date}/${month + 2}/${year}`,
+    date_de_derniere: `${year}-${month}-${date}`,
+    date_de_prochaine: `${year}-${month + 2}-${date}`,
     title: "Filtre",
     vitesse: 20,
     courant: 30,
@@ -110,8 +110,8 @@ var movies = [
   },
   {
     _id: "5b28",
-    date_de_derniere: `${date}/${month}/${year}`,
-    date_de_prochaine: `${date}/${month + 2}/${year}`,
+    date_de_derniere: `${year}-${month}-${date}`,
+    date_de_prochaine: `${year}-${month + 2}-${date}`,
     title: "Engrnage",
     genre: { _id: "5b28", name: "Mecanique", type: "systhematique" },
     etat: true,
@@ -158,6 +158,5 @@ export function modifAppareil(data){
   movies[idx].presion = data.presion;
   movies[idx].tension = data.tension;
   movies[idx].vitesse = data.vitesse;
-  movies[idx].date_de_derniere = data.date;
-
+  // movies[idx].date_de_derniere = data.date;
 }
