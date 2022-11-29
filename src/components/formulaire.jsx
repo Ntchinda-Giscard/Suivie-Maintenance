@@ -1,12 +1,12 @@
 
 import React, { Component } from 'react';
-import { getAppareils } from '../appareils/fakeMovieService';
+import { getAppareils, modifAppareil } from '../appareils/fakeMovieService';
 
 class Forms extends Component {
     courant = React.createRef();
     state = {  
         appareil: getAppareils(),
-        data: {courant: '', pression: '', tension:'', vitesse: '', date: '', name: '', identification:''}
+        data: {courant: '0', pression: '0', tension:'0', vitesse: '0', date: '0', name: '0', identification:'0'}
     }
     validate= ()=>{
         const error = {}
@@ -17,9 +17,8 @@ class Forms extends Component {
     handleSubmit = (event)=> {
         event.preventDefault();
         const error = this.validate()
-        console.log(error)
-        console.log(this.state.data.date)
-        this.setState({ error })
+        console.log(this.state.data)
+        modifAppareil(this.state.data)
     }
     handleChange = ({currentTarget: input})=>{
         const data = {...this.state.data};
@@ -35,7 +34,11 @@ class Forms extends Component {
                         <div className='col'>
                           <div className='form-group mt-3'>
                             <label htmlFor='identification' className='h5'>identification</label>
-                            <input autoFocus name='identification' onChange={this.handleChange} value={this.state.data.identification} type="texte" className='form-control w-100 ' style={{backgroundColor: '#eee'}} id='identification'  />
+                            <select name='identification' onChange={this.handleChange} value={this.state.data.identification}  className='form-control w-100' style={{backgroundColor: '#eee'}} id='identification' placeholder='Choisir une id'> 
+                                {this.state.appareil.map(appareil=> (
+                                    <option key={appareil._id} > {appareil._id} </option>
+                                ))}
+                            </select>
                             { this.validate() === true? <div className='alert alert-danger p-1'>identification requise</div> : null}
                           </div>
                            <div className='form-group mt-3'>
@@ -48,7 +51,7 @@ class Forms extends Component {
                            </div>
                           <div className='form-group mt-3'>
                             <label htmlFor='date' className='h5'>Date de miantenance</label>
-                            <input name='date' onChange={this.handleChange} value={this.state.data.date} type="date" className='form-control w-100' style={{backgroundColor: '#eee'}} id='Date' aria-describedby='emailHelp'  />
+                            <input name='date' onChange={this.handleChange} value={this.state.data.date} type="date" className='form-control w-100' style={{backgroundColor: '#eee'}} id='Date' />
                           </div>
                         </div>
                         <div className='col'>
