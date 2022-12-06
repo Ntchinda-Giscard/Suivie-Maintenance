@@ -33,17 +33,20 @@ class Forms extends Component {
                     <div className='row'>
                         <div className='col'>
                           <div className='form-group mt-3'>
-                            <label htmlFor='identification' className='h5'>identification</label>
-                            <select name='identification' onChange={this.handleChange} value={this.state.data.identification}  className='form-control w-100' style={{backgroundColor: '#eee'}} id='identification' placeholder='Choisir une id'> 
+                            <label htmlFor='identification' className='custom-select h5'>identification</label>
+                            <select  name='identification' onChange={this.handleChange} value={this.state.data.identification}  className='form-control w-100' style={{backgroundColor: '#eee'}} id='identification' >
+                                <option selected>Choisir un id</option> 
+                            
                                 {this.state.appareil.map(appareil=> (
-                                    <option key={appareil._id} > {appareil._id} </option>
+                                    <option key={appareil._id} value={appareil._id} > {appareil._id} </option>
                                 ))}
                             </select>
                             { this.validate() === true? <div className='alert alert-danger p-1'>identification requise</div> : null}
                           </div>
                            <div className='form-group mt-3'>
-                            <label htmlFor='machine' className='h5'>Nom de Machine</label>
+                            <label htmlFor='machine' className='custom-select h5'>Nom de Machine</label>
                             <select name='name' onChange={this.handleChange} value={this.state.data.name}  className='form-control w-100' style={{backgroundColor: '#eee'}} id='machine' placeholder='Choisir une machine'> 
+                                <option selected> Choisir un apareil</option>
                                 {this.state.appareil.map(appareil=> (
                                     <option key={appareil._id} > {appareil.title} </option>
                                 ))}
